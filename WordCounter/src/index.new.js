@@ -26,13 +26,19 @@ function ProgressBar({completion}) {
 
 function Editor ({
     text,
+    onTextChange
 }) {
+    function handleChange(event) {
+        onTextChange(event.target.value);
+    }
     return (
         <div className="flex flex-column mv2">
             <label htmlFor="editor" className="mv2">
             Enter your text:
             </label>
-            <textarea value={text} id="editor" />
+            <textarea value={text}
+            onChange={handleChange}
+            id="editor" />
         </div>
     );
 }
@@ -72,6 +78,9 @@ class WordCounter extends React.Component {
         // `this` in the constructor
         super();
         this.state = {text: 'hell'};
+        // `bind` returns a new function where `this` always has the
+        // value that it had when you called `bind`
+        this.handleTextChange = this.handleTextChange.bind(this);
     }
     render() {
         // props and state are attached to the `this` variable
@@ -81,17 +90,24 @@ class WordCounter extends React.Component {
         const progress = wordCount / targetWordCount;
         return (
         <form className="measure pa4 sans-serif">
-              <Editor text={text} />
+              <Editor text={text} onTextChange={this.handleTextChange}/>
              <div className="flex mt3">
                  <Counter count={wordCount}/>
                  <ProgressBar completion={progress}/>
             </div>
          </form>);
     }
+    handleTextChange(currentText) {
+        // `setState` takes a function, which must return an object
+        // with the updated state properties.
+        // return value is an object, wrap the returned object
+        // in parentheses to remove the ambiguity
+        this.setState(() => ({text: currentText}));
+    }
 }
 
 ReactDOM.render(
-    // text 不用{}
+    // text 不用
     <WordCounter targetWordCount={10} />,
     document.getElementById('app')
 );

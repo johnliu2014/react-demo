@@ -87,6 +87,16 @@ to update other components, pass the state or values you compute based on the st
 
 pass state change method as props chilren ==> parent
 
+event object: 
+tells you which part of the interface has been affected(event.target)
+and what exactly happened(event.type)
+event handler: a function that React calls everty time it detects an event like a click or keyboard input.
 
+registering event handler:
+pass the event handler as a prop to the element where you want to capture the user interaction
 
+As you type, React invokes `handleChange`, which in return calls `handleTextChange`, which finally calls `setState` on `WordCounter`.
+As the state changes, React sechedules a re-render of the whole `WordCounter` compenent, which also triggers a re-render of its children.
+
+# 4 schedule a asynchronous action
 
