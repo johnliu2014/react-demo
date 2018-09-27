@@ -71,3 +71,22 @@ using `value props` to pass data between components.
 
 # 3 
 
+state concept
+- values that change over time
+- an object has state if its behavior is influenced by its history.
+
+inside a React component, props are immutable ('配置'数据)
+
+state object:
+the data that affects the UI, in `this.state`
+once you set the initial value, you update `this.state` with the `this.setState` function.
+
+`setState` can only update the state of the component where you call it.
+
+to update other components, pass the state or values you compute based on the state as props  parent ==> children
+
+pass state change method as props chilren ==> parent
+
+
+
+
