@@ -100,3 +100,10 @@ As the state changes, React sechedules a re-render of the whole `WordCounter` co
 
 # 4 schedule a asynchronous action
 
+separating state management from display of information
+
+- event handler let you know how users interact with the UI and update the state in response
+- update the state in response to some new data from the network
+  
+handle state with `setState` function
+
