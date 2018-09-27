@@ -107,3 +107,38 @@ separating state management from display of information
   
 handle state with `setState` function
 
+# 5 the build system
+
+webpack: 
+
+- module bundler 
+
+Modules let you divide an application into multiple files, each with a specific function, and define the dependencies between the files.
+
+Then the module bundler aggregates the source files into as many or as little files as you want.
+
+- transformer
+
+webpack can also transform the source code before assembling the modules.
+
+This means you can optimize for performance in production while keeping the source files in a structure that's optimal for ease of development.
+
+Node.js and npm
+
+package.json
+
+- scripts
+  commands to manage our project
+- dependencies
+  production dependencies
+- devDependencies
+  development dependencies
+
+node_modules
+package-lock.json
+
+init npm package: `npm init -y`
+install webpack: `npm i --save-dev webpack`
+configure webpack:
+
+
