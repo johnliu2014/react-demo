@@ -108,7 +108,7 @@ separating state management from display of information
 handle state with `setState` function
 
 # 5 the build system
-
+create-react-app
 webpack: 
 
 - module bundler 
@@ -120,6 +120,8 @@ Then the module bundler aggregates the source files into as many or as little fi
 - transformer
 
 webpack can also transform the source code before assembling the modules.
+webpack considers any file that it knows how to concatenate with others and output into a bundle as a module.
+you can extend this with webpack add-ons called `loaders`, which are functions that transform or analyze the source code before webpack places it in the final output.
 
 This means you can optimize for performance in production while keeping the source files in a structure that's optimal for ease of development.
 
@@ -137,8 +139,28 @@ package.json
 node_modules
 package-lock.json
 
-init npm package: `npm init -y`
-install webpack: `npm i --save-dev webpack`
-configure webpack:
+1 init npm package: `npm init -y`
 
+2 install webpack: `npm i --save-dev webpack`
 
+3 configure webpack:
+
+one or more entry points:
+Entry points configure the files where execution starts once the application loads in the browser.
+
+one output:
+The output configures how entry points map to output file namess.
+
+subset of project files:
+
+loaders:
+
+Each element in the rules array defines a type of file and loaders to user for those files.
+
+4 install babel `npm i --save-dev babel-loader babel-core babel-preset-react-app`
+
+5 configure babel
+
+6 install cross-env
+
+7 
