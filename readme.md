@@ -1,3 +1,5 @@
+# 1
+
 react automatically updates the DOM(UI) when your data model changes
 
 lets you iterate on the interface by combining, expanding, and moving around self-contained elements(components)
@@ -39,4 +41,33 @@ Components combine multiple elements and describe a piece of UI as a function of
 ??? components can have children element and don't
 
 Babel assumes elements that start with a lowercase define regular HTML elements, and elements that start with a capital are based on components.
+
+# 2
+
+components only receive data from their parents.
+
+One component will perform the calculations, the use props to pass the result of the calculation to its children. AS `container/parent component`.
+
+necessary data: text and target word count
+derived data: count and progress
+
+the text box, the counter, and the progress bar take props and display UI. `presentational components`.
+
+Container components contain logic and perform calculation. Presentational components just display the props.
+
+Since props pass from parents to children, you must place smart compenents higher up in th hierarchy.
+
+```
+<WordCounter>
+    <Editor />
+    <Counter />
+    <ProgressBar />
+</WordCounter>
+```
+
+Most components should define the markup and style to display the data. They work a little bit like templates. Other components sit at the top of the component hierarchy, and calculate the date their children need.
+
+using `value props` to pass data between components.
+
+# 3 
 
